@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nhật ký tình yêu | Love Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="background-animation">
+        <div class="bubble bubble-1"></div>
+        <div class="bubble bubble-2"></div>
+        <div class="bubble bubble-3"></div>
+        <div class="bubble bubble-4"></div>
+    </div>
+
+    <div class="container">
+        <!-- Tiêu đề và Đếm ngày -->
+        <header class="glass-panel text-center">
+            <h1>Hành trình của chúng mình 💖</h1>
+            <p class="subtitle">Bắt đầu từ ngày 22 tháng 3</p>
+            <div class="love-counter">
+                <span class="heartbeat-icon"><i class="fa-solid fa-heart"></i></span>
+                <div class="days-wrapper">
+                    <span id="days-count" class="days-count">...</span>
+                    <span class="days-label">Ngày</span>
+                </div>
+                <span class="heartbeat-icon"><i class="fa-solid fa-heart"></i></span>
+            </div>
+            <div class="progress-container">
+                <div class="progress-bar" id="progress-bar"></div>
+            </div>
+            <p class="progress-status" id="progress-status">Cùng nhau viết tiếp những kỷ niệm...</p>
+        </header>
+
+        <!-- Form Đánh giá -->
+        <section class="glass-panel checkin-section">
+            <h2>Gửi gắm yêu thương hôm nay</h2>
+            <form id="checkin-form">
+                <div class="form-group">
+                    <label>Ai đang viết nhật ký?</label>
+                    <div class="user-selector">
+                        <input type="radio" id="user-boy" name="user" value="An Trần" checked>
+                        <label for="user-boy" class="user-btn">
+                            <img src="an.jpg" alt="An Trần" class="avatar-img" onerror="this.src='https://api.dicebear.com/7.x/micah/svg?seed=AnTran&backgroundColor=fbd4e7'"> An Trần
+                        </label>
+                        
+                        <input type="radio" id="user-girl" name="user" value="Nga Phạm">
+                        <label for="user-girl" class="user-btn">
+                            <img src="nga.jpg" alt="Nga Phạm" class="avatar-img" onerror="this.src='https://api.dicebear.com/7.x/micah/svg?seed=NgaPham&backgroundColor=fcd3e1'"> Nga Phạm
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Ngày hôm nay của hai đứa thế nào?</label>
+                    <div class="rating-stars" id="rating-stars">
+                        <i class="fa-solid fa-star star" data-value="1"></i>
+                        <i class="fa-solid fa-star star" data-value="2"></i>
+                        <i class="fa-solid fa-star star" data-value="3"></i>
+                        <i class="fa-solid fa-star star" data-value="4"></i>
+                        <i class="fa-solid fa-star star" data-value="5"></i>
+                    </div>
+                    <input type="hidden" id="rating-value" value="0" required>
+                    <p id="rating-desc" class="rating-desc">Hãy chấm điểm nha!</p>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Lời nhắn nhủ / Ghi chú</label>
+                    <textarea id="message" rows="3" placeholder="Hôm nay anh/em cảm thấy..." required></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn"><i class="fa-solid fa-paper-plane"></i> Gửi Nhật Ký</button>
+            </form>
+        </section>
+
+        <!-- Dòng thời gian -->
+        <section class="glass-panel timeline-section">
+            <h2>Cuốn sổ kỷ niệm 📖</h2>
+            <div id="timeline" class="timeline">
+                <!-- Data will be populated here by JS -->
+                <div class="empty-state">
+                    <i class="fa-solid fa-face-grin-hearts"></i>
+                    <p>Chưa có ghi chú nào. Hãy là người đầu tiên viết nhé!</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>
